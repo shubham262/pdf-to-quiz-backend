@@ -67,7 +67,7 @@ export const handleSaveQuizResponse = async (req, res) => {
 	try {
 		const { id } = req.params || {};
 		const { userResponse } = req.body || {};
-		if (!id || !userResponse) {
+		if (!id || userResponse === undefined) {
 			return res.status(400).json({
 				message: "Quiz Id and userResponse is required",
 			});
