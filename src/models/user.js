@@ -1,4 +1,3 @@
-import { email } from "better-auth";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
@@ -21,4 +20,5 @@ const userSchema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-export default User = mongoose.model("User", userSchema, "user");
+const User = mongoose.model("User", userSchema, "user");
+export default User;

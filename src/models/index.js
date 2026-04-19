@@ -1,6 +1,7 @@
 import User from "./user.js";
 import Quiz from "./quiz.js";
-export default db = {
+const db = {
 	User,
 	Quiz,
 };
+export default db;

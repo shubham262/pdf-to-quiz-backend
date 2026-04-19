@@ -6,7 +6,7 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 let auth = null;
 export const handleBetterAuth = async () => {
-	if (auth) return;
+	if (auth) return auth;
 	const { db } = await handleMongoDBConnection();
 	auth = betterAuth({
 		database: mongodbAdapter(db),

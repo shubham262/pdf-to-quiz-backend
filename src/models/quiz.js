@@ -12,9 +12,12 @@ const quizSchema = new mongoose.Schema(
 			default: {},
 		},
 		createdBy: {
-			ref: "user",
+			type: Schema.Types.ObjectId,
+			required: true,
+			ref: "User",
 		},
 	},
 	{ timestamps: true }
 );
-export default Quiz = mongoose.model("Quiz", quizSchema);
+const Quiz = mongoose.model("Quiz", quizSchema);
+export default Quiz;
