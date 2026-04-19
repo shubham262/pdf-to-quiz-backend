@@ -6,7 +6,12 @@ const app = express();
 
 const auth = await handleBetterAuth();
 
-app.use(cors());
+app.use(
+	cors({
+		origin: "http://localhost:3000",
+		credentials: true,
+	})
+);
 app.use(express.json());
 
 app.use("/api/auth", toNodeHandler(auth));
