@@ -63,6 +63,35 @@ export const handleQuizGeneration = async (req, res) => {
 	}
 };
 
+export const handleSaveQuizResponse = async (req, res) => {
+	try {
+		const { id } = req.params || {};
+		const { userResponse } = req.body || {};
+		if (!id || !userResponse) {
+			return res.status(400).json({
+				message: "Quiz Id and userResponse is required",
+			});
+		}
+
+		const results = await Quiz.findByIdAndUpdate(
+			id,
+			{ userResponse },
+			{ returnDocument: "after" }
+		);
+
+		return res.status(200).json({
+			message: "Quiz created Successfully",
+			data: results,
+		});
+	} catch (error) {
+		console.log("error==>handleSaveQuizResponse", error);
+		res.status(500).json({
+			message: "Internal Servor Erorr",
+			error,
+		});
+	}
+};
+
 export const fetchQuizDetails = async (req, res) => {
 	try {
 		const { id } = req.params || {};
