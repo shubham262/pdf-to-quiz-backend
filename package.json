@@ -1,0 +1,22 @@
+{
+	"name": "pdf-to-quiz-backend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon src/index.js",
+		"start": "node src/index.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"better-auth": "^1.6.5",
+		"cors": "^2.8.6",
+		"dotenv": "^17.4.2",
+		"express": "^5.2.1",
+		"mongodb": "^7.1.1",
+		"mongoose": "^9.4.1"
+	},
+	"type": "module"
+}
